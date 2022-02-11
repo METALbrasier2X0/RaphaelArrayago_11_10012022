@@ -9,7 +9,7 @@ function Collapse(props) {
 <button type="button" onClick={()=>{set_mon_state(!mon_state)} } className="collapsible-about">{props.title}</button>
 
 {mon_state&& <div className="content-about">
-  <p>{props.text}</p>
+  <p  className="collapsible-about-text">{props.text}</p>
 </div>}
 
     </>

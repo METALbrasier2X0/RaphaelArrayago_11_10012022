@@ -87,6 +87,11 @@ justify-content: center;
 
 }
 
+.Content-about{
+   width : 85%;
+   margin: auto;
+   display: block;
+}
 
 .collapsible-about {
   background-color: $Primary;
@@ -94,17 +99,20 @@ justify-content: center;
   cursor: pointer;
   padding: 18px;
   width: 100%;
+  margin: auto;
   border: none;
   border-radius: 10px;
   text-align: left;
   outline: none;
   font-weight:500;
-  font-size: 20px;
+  font-size: 24px;
+  margin: 30px 0px 0px 0px;
 }
 
 
 .active, .collapsible-about :hover {
   background-color: #ccc;
+
 }
 
 
@@ -195,7 +203,13 @@ justify-content: center;
   -o-background-size: cover;
   background-size: cover!important;
 }
-
+.content-about{
+  font-size: 24px;
+  color: $Primary;
+  margin-top: -20px;
+  padding-top: 30px;
+  border-radius: 7px;
+}
 
 
 
