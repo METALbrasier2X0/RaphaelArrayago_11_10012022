@@ -6,12 +6,14 @@ function Collapse(props) {
 
   return (
     <>
+<div className="bloc-collapse">
 <button type="button" onClick={()=>{set_mon_state(!mon_state)} } className="collapsible-about">{props.title}</button>
 
 {mon_state&& <div className="content-about">
   <p  className="collapsible-about-text">{props.text}</p>
 </div>}
 
+  </div>
     </>
   ); 
 }

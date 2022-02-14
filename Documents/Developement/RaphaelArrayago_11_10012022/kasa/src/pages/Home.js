@@ -1,5 +1,7 @@
 import Logement_home from "./Logement_home"
 
+ var logementData = require('./../json/logements.json');
+
 function Home(props) {
   return (
     <>
@@ -7,13 +9,8 @@ function Home(props) {
 
     <div className="Logement_Home_div">
 
-    <Logement_home />
-    <Logement_home />
-    <Logement_home />
-    <Logement_home />
-    <Logement_home />
-    <Logement_home />
-    
+      {logementData.map(r =>  <Logement_home title={r.title} url={r.id} img={r.pictures[0]}/> ) }
+
     </div>
     </>
   ); 
