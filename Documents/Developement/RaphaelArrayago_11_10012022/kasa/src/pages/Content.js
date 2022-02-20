@@ -7,6 +7,27 @@ import {
 } from "react-router-dom";
 import Collapse from "./Collapse"
 
+function star(rate) {
+    var starHTML = '';
+    var rate = parseInt(rate);
+    var increment = 0;
+    var max = 5; // maximum rating
+ 
+    while(increment < rate) {
+      starHTML += '<i class="material-icons orange">grade</i>';
+      increment++;
+    }
+ 
+    while(max > rate) {
+      starHTML += '<i class="material-icons gray">grade</i>';
+      max--;
+    }
+    return starHTML;
+  };
+
+  var snippet = '';
+
+
 function Content(props) {
 
   let { id } = useParams();
@@ -15,12 +36,35 @@ function Content(props) {
   const product = logementData.find(element => element.id == id);
   console.log(product)
 
+  let firstimg = product.pictures.shift();
+
+
   return (
     <>
 
-    <div className="content-slider">
-    {product.pictures.map(r => <img className="content-slider-img" src={r} />) }
+<div id="carouselExampleControls" className="carousel slide content-slider" data-ride="carousel">
+
+
+  <div className="carousel-inner">
+    <div className="carousel-item active">
+      <img className="d-block w-100" src={firstimg}  alt="First slide"/>
     </div>
+
+
+    {product.pictures.map(r => <div className="carousel-item">
+      <img className="d-block w-100" src={r} />
+    </div> ) }
+  </div>
+  <a className="carousel-control-prev" href="#carouselExampleControls" role="button" data-slide="prev">
+    <span className="carousel-control-prev-icon" aria-hidden="true"></span>
+    <span className="sr-only">Previous</span>
+  </a>
+  <a className="carousel-control-next" href="#carouselExampleControls" role="button" data-slide="next">
+    <span className="carousel-control-next-icon" aria-hidden="true"></span>
+    <span className="sr-only">Next</span>
+  </a>
+</div>
+
 
     <div className="Content-page">
     <h1 className="Content-page-title">{product.title}</h1>
@@ -33,13 +77,19 @@ function Content(props) {
 
     </div>
 
+
     <div className="Content-page-bailleur">
 
-    <p>{product.host.name}</p>
+    <div className="Content-page-bailleur-host">
+
+    <p className="host-name">{product.host.name}</p>
     <img src={product.host.picture} />
 
-
     </div>
+
+     <div className="rating" dangerouslySetInnerHTML={{__html: star(product.rating)}} />
+
+     </div>
 
     <div className="Content-page-descriptions">
     <Collapse title="Description" text={product.description}/>

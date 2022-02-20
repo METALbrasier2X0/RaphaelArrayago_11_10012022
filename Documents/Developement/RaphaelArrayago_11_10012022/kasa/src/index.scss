@@ -66,8 +66,10 @@ code {
   background-size: cover;
   text-align: center;
   border-radius: 20px;
-  height: 54px;
+  
 }
+
+.about{}
 
 .Logement_Home_div{
 
@@ -191,13 +193,90 @@ justify-content: end;
 }
 }
 
-@media (max-width: 900px) { 
+@media (max-width: 750px) { 
 
+.content-slider {
+  height: 300px!important;
+
+}
+
+
+.Content-page-descriptions{
+  flex-direction: column;
+  align-items: center;
+}
+
+.Content-page-descriptions .bloc-collapse{
+  margin: 20px;
+  width: 100% !important;
+}
+
+.nav-link {
+
+  & ul{
+  margin-top: 1rem;
+ font-size: 0.9em;
+padding-left: 0px;
+  }
+}
+.Content-about {
+  width: 100%;
+}
+
+.content-about {
+  font-size: 15px!important;
+}
+
+.Logement_Home_div .Logement_Home {
+  width: 350px;
+  height: 350px;
+}
+
+.page {
+  padding-left: 30px;
+  padding-right: 30px;
+}
+
+.Banner {
+  font-weight: 500;
+  font-size: 28px;
+  color: white;
+  padding: 40px 50px 40px 15px;
+  text-align: left;
+}
+
+.Logement_Home_div {
+  background-color: white
+}
+
+.nav-link {
+  padding: 0px!important;
+
+}
+
+.collapsible-about {
+  font-size: 15px;
+  padding: 12px;
+
+}
+
+
+
+.about{
+  height: 250px;
+  background-size: cover!important;
+background-position:center!important;
+}
+
+.App-logo {
+  width: 140px!important;
+}
   .nopage{
 
     text-align: center;
 
 & h1 {
+font-weight: 800;
   font-size: 8em;
   margin: 0px;
 }
@@ -215,17 +294,11 @@ justify-content: end;
 
 .nav-link{
 
-  transform: translateX(-10%);
-  
-  width:120%;
 
-  &  .App-logo{
-    width: 200px;
-  }
 
   & ul{
     display: flex;
-    font-size: 18px;   
+  
   }
 
   & li{
@@ -238,7 +311,7 @@ justify-content: end;
 }
 
 .about{
-  background: linear-gradient( rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.4) ), url('Images/about.png')!important;
+  background: linear-gradient( rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.4) ), url('Images/about.png');
   -webkit-background-size: cover;
   -moz-background-size:  cover;
   -o-background-size: cover;
@@ -264,31 +337,34 @@ justify-content: end;
 
 }
 
+
 .collapsible-about-text{
   padding-bottom: 30px;
-  padding-top: 5px;
+  padding-top: 30px;
 }
 
 .Content-page{
 
-margin-top: 50px;
+margin-top: 60px;
 line-height:15px;
 
 & .Content-page-title{
-  font-size: 36px;
+  font-size: 43px;
   font-weight: 500;
   color: $Primary;
 }
 
 & .content-location {
-  font-size: 18px;
+  font-size: 23px;
   font-weight: 500;
   color: $Primary;
+  margin-top: 10px;
 }
 
 & .Content-page-tags{
   display: flex;
   justify-content: left;
+  margin-top: 30px;
 }
 
 & span{
@@ -296,23 +372,38 @@ line-height:15px;
   padding: 10px;
   margin: 10px 10px 10px 0px;
   border-radius: 15px;
-  font-size: 14px;
+  font-size: 17px;
   text-align: center;
   display: block;
-  width: 150px;
+  width: 180px;
   font-weight: 500;
   color: white;
 }
 
 }
 
+.material-icons {
+  margin-top: 10px;
+  font-size: 55px;}
+
 .Content-page-bailleur {
   position: absolute;
   right: 80px;
   text-align: right;
-  margin-top: -152px;
+  margin-top: -200px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+
+  & .Content-page-bailleur-host{
   display: flex;
   align-items: center;
+  }
+
+  & .rating{
+
+  }
 
   & img {
    border-radius: 50%;
@@ -341,4 +432,52 @@ line-height:15px;
 
 .equipments{
 margin : 0px 5px 10px 5px;
+}
+
+.carousel-inner {
+  position: relative;
+
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%,-50%);
+}
+
+
+.carousel-control-next-icon {
+background-image: none;
+ 
+}
+  .carousel-control-next-icon{
+    border: solid white;
+  border-width: 0 13px 13px 0;
+  display: inline-block;
+  padding: 30px;
+ transform: rotate(-45deg);
+  -webkit-transform: rotate(-45deg);}
+
+.carousel-control-prev-icon {
+background-image: none;
+}
+
+  .carousel-control-prev-icon{
+    border: solid white;
+  border-width: 0 13px 13px 0;
+  display: inline-block;
+  padding: 30px;
+  transform: rotate(135deg);
+  -webkit-transform: rotate(135deg);}
+
+  .host-name{
+  width: 180px;
+  color : $Primary;
+  font-size: 30px;
+  text-align: right;
+  margin-right: 30px;
+  }
+
+  .gray {
+  color: gray;
+}
+.orange {
+  color: $Primary;
 }
