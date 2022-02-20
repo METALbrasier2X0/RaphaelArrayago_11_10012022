@@ -34,7 +34,6 @@ function Content(props) {
   var logementData = require('./../json/logements.json');
 
   const product = logementData.find(element => element.id == id);
-  console.log(product)
 
   let firstimg = product.pictures.shift();
 
@@ -93,7 +92,7 @@ function Content(props) {
 
     <div className="Content-page-descriptions">
     <Collapse title="Description" text={product.description}/>
-    <Collapse title="Equipement" text={product.equipments.map(r => <p className="equipments"> {r}  </p> ) }/>
+    <Collapse title="Equipement" text={product.equipments.map(r => <p  className="equipments"> {r}  </p> ) }/>
     </div>
     </>
   ); 

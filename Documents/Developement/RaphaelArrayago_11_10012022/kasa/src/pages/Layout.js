@@ -9,10 +9,10 @@ function Layout()  {
         <Link to="/"> <img src={logo} className="App-logo" alt="logo" /> </Link>
 
           <ul>
-          <li>
+          <li key="accueil">
             <Link to="/"> Accueil</Link>
           </li>
-          <li>
+          <li key="about">
             <Link to="/about">À propos</Link>
           </li>
         </ul>
