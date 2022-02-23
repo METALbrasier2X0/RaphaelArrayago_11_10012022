@@ -1,4 +1,4 @@
-import Logement_home from "./../Logement_home"
+import Logement_home from "./../LogementHome"
 /*Affichage de la page home*/
 var logementData = require('./../json/logements.json');
 
