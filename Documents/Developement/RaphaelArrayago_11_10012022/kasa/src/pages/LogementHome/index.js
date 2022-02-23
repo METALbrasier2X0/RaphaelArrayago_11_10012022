@@ -1,6 +1,6 @@
 import { Outlet, Link } from "react-router-dom";
 /*Affichage des product sur la page Home*/
-function Logement_Home(props) {
+function LogementHome(props) {
 
   return (
     <>
