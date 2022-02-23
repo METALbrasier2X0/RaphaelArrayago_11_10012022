@@ -9,7 +9,7 @@ function Home(props) {
 
       <div className="LogementHomeDiv">
 
-        {logementData.map(r =>  <Logement_home title={r.title} url={r.id} img={r.pictures[0]}/> ) }
+        {logementData.map(r =>  <LogementHome title={r.title} url={r.id} img={r.pictures[0]}/> ) }
 
       </div>
     </>

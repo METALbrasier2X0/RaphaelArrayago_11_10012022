@@ -16,4 +16,4 @@ function LogementHome(props) {
 
 );
 }
-export default Logement_Home;
+export default LogementHome;
