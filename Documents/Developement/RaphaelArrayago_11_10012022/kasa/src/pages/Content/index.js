@@ -5,7 +5,9 @@ import {
   Link,
   useParams
 } from "react-router-dom";
-import Collapse from "./Collapse"
+import Collapse from "./../Collapse"
+
+/* fonction pour generer les étoiles du rating*/
 
 function star(rate) {
     var starHTML = '';
@@ -25,8 +27,10 @@ function star(rate) {
     return starHTML;
   };
 
+
   var snippet = '';
 
+/* fonction pour  prendre l'id de l'url et select le produit correct*/
 
 function Content(props) {
 
@@ -43,12 +47,12 @@ function Content(props) {
 
 <div id="carouselExampleControls" className="carousel slide content-slider" data-ride="carousel">
 
-
   <div className="carousel-inner">
     <div className="carousel-item active">
       <img className="d-block w-100" src={firstimg}  alt="First slide"/>
     </div>
 
+{/*slider*/}
 
     {product.pictures.map(r => <div className="carousel-item">
       <img className="d-block w-100" src={r} />
@@ -65,34 +69,35 @@ function Content(props) {
 </div>
 
 
+{/*info produit*/}
+
     <div className="Content-page">
-    <h1 className="Content-page-title">{product.title}</h1>
-    <h3 className="content-location">{product.location}</h3>
+      <h1 className="Content-page-title">{product.title}</h1>
+      <h3 className="content-location">{product.location}</h3>
 
-    <div className="Content-page-tags">
-    {product.tags.map(r => <span>{r}</span> ) }
+      <div className="Content-page-tags">
+        {product.tags.map(r => <span>{r}</span> ) }
+      </div>
     </div>
 
-
-    </div>
-
+{/*info Hôte*/}
 
     <div className="Content-page-bailleur">
 
-    <div className="Content-page-bailleur-host">
+      <div className="Content-page-bailleur-host">
 
-    <p className="host-name">{product.host.name}</p>
-    <img src={product.host.picture} />
+        <p className="host-name">{product.host.name}</p>
+        <img src={product.host.picture} />
 
-    </div>
+      </div>
 
-     <div className="rating" dangerouslySetInnerHTML={{__html: star(product.rating)}} />
+      <div className="rating" dangerouslySetInnerHTML={{__html: star(product.rating)}} />
 
      </div>
 
     <div className="Content-page-descriptions">
-    <Collapse title="Description" text={product.description}/>
-    <Collapse title="Equipement" text={product.equipments.map(r => <p  className="equipments"> {r}  </p> ) }/>
+      <Collapse title="Description" text={product.description}/>
+      <Collapse title="Equipement" text={product.equipments.map(r => <p  className="equipments"> {r}  </p> ) }/>
     </div>
     </>
   ); 
